@@ -3,13 +3,36 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
-    <title>pixelrabbit AKA dangovea</title>
+    <title>Stencil Component Starter</title>
 
     <script type="module" src="/build/pixelrabbit.esm.js"></script>
     <script nomodule src="/build/pixelrabbit.js"></script>
+    <link rel="stylesheet" href="/build/pixelrabbit.css" />
   </head>
   <body>
-    <p>Coming soon!</p>
-    <!-- <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component> -->
+
+    <script>
+      const navitems = [{
+        text: "Intro",
+        href: "#"
+      }{
+        text: "Components",
+        href: "#"
+      }]
+    </script>
+    <pxl-header sitetitle="Fluffle"></pxl-header>
+    <script>
+      document.querySelector('pxlNavbar').items = [{text:"Intro",href="#"},{text:"Intro",href="#"}];
+    </script>
+
+    <div class="container">
+      <pxl-content heading="This is a heading"> 
+        <p>Tempor adipisicing nostrud ea tempor occaecat. Cillum mollit sunt do ipsum cillum in id amet enim culpa mollit cillum non. Aliquip mollit enim ex nisi deserunt qui ex. Nostrud incididunt tempor laboris eiusmod proident fugiat eu consectetur.</p>
+      </pxl-content>
+      <hr>
+      <pxl-heading level="h1" label="This has label" text="This is an H1"></pxl-heading>
+      <pxl-heading level="h2" text="This is an H2"></pxl-heading>
+      <pxl-heading level="h3" label="This is H3 label" text="This is an H3" href="#"></pxl-heading>
+    </div>
   </body>
 </html>

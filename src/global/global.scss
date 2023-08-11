@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&display=swap');
+
+// reset 
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+// HTML5 display-role reset for older browsers
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+// end reset
+
+
+body {
+  --dim-gray: #797270ff;
+  --dark-purple: #31081fff;
+  --orange-crayola: #ff7733ff;
+  --tiffany-blue: #b6eadaff;
+  --snow: #fbf5f3ff;
+
+    margin: 0;
+    font-family: 'Noto Serif', Calibri, "Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    background-color: #fff;
+    color: var(--dark-purple);
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+h2 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+hr {
+    margin: 2rem 0;
+    border: none;
+    background-color: var(--dark-purple);
+    height: 1px;
+}
+
+a {
+    color: var(--dark-purple);
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+
+
+@mixin text-3d($h:180,$s:100%,$l:50%) {
+  $ts: ();
+  @for $i from 1 through 50 {
+    $ts: $ts, $i*2px $i*2px hsl($h + $i*1, $s, $l - $i);            
+  }
+  text-shadow: $ts;
+}
+
+#storybook-docs {
+  header {
+    container: pageHeader/inline-size;
+    position: relative;
+    background-color: var(--tiffany-blue);
+    padding: 24px;
+    margin: 0 0 24px;
+    font-family: 'Caprasimo','Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    .inner {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    @container pageHeader (min-width:640px){
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+    h1 {
+      font-family: "Caprasimo";
+      font-size: 32px;
+      @container pageHeader (min-width:640px){
+        font-size: 48px;
+      }
+      font-weight: normal;
+      margin: 0;
+      background-color: var(--dark-purple);
+      color: var(--snow);
+      padding: 16px 24px;
+      border: 1px solid var(--snow);
+      overflow: hidden;
+      @include text-3d(300, 66%, 25%);
+    }
+    p {
+      font-family: "Caprasimo";
+      font-weight: normal;
+      font-size: 24px;
+      @container pageHeader (min-width:640px){
+        font-size: 32px;
+      }
+      margin: 0;
+      padding: 0;
+      line-height: 0;
+      align-self: flex-end;
+      color: var(--dark-purple);
+    }
+    img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      object-fit: cover;
+      mix-blend-mode: luminosity;
+      opacity: 0.2;
+    }
+  }
+}
+
+
+

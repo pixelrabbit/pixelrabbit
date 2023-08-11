@@ -6,56 +6,156 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface MyComponent {
+    interface PxlButton {
+    }
+    interface PxlCard {
         /**
-          * The first name
+          * HTML which populates card main
          */
-        "first": string;
+        "content": string;
+        "disclosure": string;
+        "headingText": string;
+    }
+    interface PxlHeader {
         /**
-          * The last name
+          * label over header, sometimes used for taxonomy label
          */
-        "last": string;
+        "sitetitle": string;
+    }
+    interface PxlHeading {
         /**
-          * The middle name
+          * makes heading container for link
          */
-        "middle": string;
+        "href": string;
+        /**
+          * label over heading, sometimes used for taxonomy label
+         */
+        "label": string;
+        /**
+          * heading level
+         */
+        "level": ("h1" | "h2" | "h3" | "h4");
+        /**
+          * heading text
+         */
+        "text": string;
+    }
+    interface PxlLink {
+        /**
+          * (optional) Determines if link opens in new window
+         */
+        "external": boolean;
+        "href": string;
+        /**
+          * (optional) Icon which appears in link
+         */
+        "icon": string;
+        "text": string;
     }
 }
 declare global {
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
+    interface HTMLPxlButtonElement extends Components.PxlButton, HTMLStencilElement {
     }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
+    var HTMLPxlButtonElement: {
+        prototype: HTMLPxlButtonElement;
+        new (): HTMLPxlButtonElement;
+    };
+    interface HTMLPxlCardElement extends Components.PxlCard, HTMLStencilElement {
+    }
+    var HTMLPxlCardElement: {
+        prototype: HTMLPxlCardElement;
+        new (): HTMLPxlCardElement;
+    };
+    interface HTMLPxlHeaderElement extends Components.PxlHeader, HTMLStencilElement {
+    }
+    var HTMLPxlHeaderElement: {
+        prototype: HTMLPxlHeaderElement;
+        new (): HTMLPxlHeaderElement;
+    };
+    interface HTMLPxlHeadingElement extends Components.PxlHeading, HTMLStencilElement {
+    }
+    var HTMLPxlHeadingElement: {
+        prototype: HTMLPxlHeadingElement;
+        new (): HTMLPxlHeadingElement;
+    };
+    interface HTMLPxlLinkElement extends Components.PxlLink, HTMLStencilElement {
+    }
+    var HTMLPxlLinkElement: {
+        prototype: HTMLPxlLinkElement;
+        new (): HTMLPxlLinkElement;
     };
     interface HTMLElementTagNameMap {
-        "my-component": HTMLMyComponentElement;
+        "pxl-button": HTMLPxlButtonElement;
+        "pxl-card": HTMLPxlCardElement;
+        "pxl-header": HTMLPxlHeaderElement;
+        "pxl-heading": HTMLPxlHeadingElement;
+        "pxl-link": HTMLPxlLinkElement;
     }
 }
 declare namespace LocalJSX {
-    interface MyComponent {
+    interface PxlButton {
+    }
+    interface PxlCard {
         /**
-          * The first name
+          * HTML which populates card main
          */
-        "first"?: string;
+        "content"?: string;
+        "disclosure"?: string;
+        "headingText"?: string;
+    }
+    interface PxlHeader {
         /**
-          * The last name
+          * label over header, sometimes used for taxonomy label
          */
-        "last"?: string;
+        "sitetitle"?: string;
+    }
+    interface PxlHeading {
         /**
-          * The middle name
+          * makes heading container for link
          */
-        "middle"?: string;
+        "href"?: string;
+        /**
+          * label over heading, sometimes used for taxonomy label
+         */
+        "label"?: string;
+        /**
+          * heading level
+         */
+        "level"?: ("h1" | "h2" | "h3" | "h4");
+        /**
+          * heading text
+         */
+        "text"?: string;
+    }
+    interface PxlLink {
+        /**
+          * (optional) Determines if link opens in new window
+         */
+        "external"?: boolean;
+        "href"?: string;
+        /**
+          * (optional) Icon which appears in link
+         */
+        "icon"?: string;
+        "text"?: string;
     }
     interface IntrinsicElements {
-        "my-component": MyComponent;
+        "pxl-button": PxlButton;
+        "pxl-card": PxlCard;
+        "pxl-header": PxlHeader;
+        "pxl-heading": PxlHeading;
+        "pxl-link": PxlLink;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "pxl-button": LocalJSX.PxlButton & JSXBase.HTMLAttributes<HTMLPxlButtonElement>;
+            "pxl-card": LocalJSX.PxlCard & JSXBase.HTMLAttributes<HTMLPxlCardElement>;
+            "pxl-header": LocalJSX.PxlHeader & JSXBase.HTMLAttributes<HTMLPxlHeaderElement>;
+            "pxl-heading": LocalJSX.PxlHeading & JSXBase.HTMLAttributes<HTMLPxlHeadingElement>;
+            "pxl-link": LocalJSX.PxlLink & JSXBase.HTMLAttributes<HTMLPxlLinkElement>;
         }
     }
 }
