@@ -1,2 +1,0 @@
-import{p as e,b as t}from"./p-b2b0c801.js";export{s as setNonce}from"./p-b2b0c801.js";const n=()=>{const t=import.meta.url;const n={};if(t!==""){n.resourcesUrl=new URL(".",t).href}return e(n)};n().then((e=>t([["p-76d24d7a",[[0,"pxl-card",{headingText:[1,"heading-text"],content:[1],disclosure:[1]}]]],["p-bdb7f891",[[0,"pxl-button"]]],["p-20ed3c04",[[0,"pxl-heading",{label:[1],level:[1],text:[1],href:[1]}],[0,"pxl-header",{sitetitle:[1]}],[0,"pxl-link",{text:[1],href:[1],icon:[1],external:[4]}]]]],e)));
-//# sourceMappingURL=pixelrabbit.esm.js.map
