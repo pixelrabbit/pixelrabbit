@@ -1,5 +1,5 @@
 {
-  "name": "pixelRabbit",
+  "name": "pixelrabbit",
   "private": true,
   "scripts": {
     "build": "turbo run build",
